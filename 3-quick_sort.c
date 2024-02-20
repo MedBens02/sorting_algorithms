@@ -77,7 +77,7 @@ void qSort(int *array, size_t size, ssize_t L, ssize_t H)
  */
 void quick_sort(int *array, size_t size)
 {
-	if (array == NULL || size < 0)
+	if (array == NULL || size < 2)
 		return;
 	qSort(array, size, 0, size - 1);
 }
