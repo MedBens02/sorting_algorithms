@@ -1,23 +1,28 @@
 #include "sort.h"
 
 
-void swapInt(int *x, int *y);
+void swapInt(int *array, size_t size, int *x, int *y);
 size_t lomutoPart(int *array, size_t size, ssize_t L, ssize_t H);
 void qSort(int *array, size_t size, ssize_t L, ssize_t H);
 
 
 /**
  * swapInt - swaps 2 ints
+ * @array: the array
+ * @size: its size
  * @x: first int
  * @y: second int
  */
-void swapInt(int *x, int *y)
+void swapInt(int *array, size_t size, int *x, int *y)
 {
 	int tmp;
-
-	tmp = *x;
-	*x = *y;
-	*y = tmp;
+	
+	if (*x != *y)
+	{	tmp = *x;
+		*x = *y;
+		*y = tmp;
+		print_array((const int *)array, size);
+	}
 }
 
 /**
@@ -31,19 +36,17 @@ void swapInt(int *x, int *y)
  */
 size_t lomutoPart(int *array, size_t size, ssize_t L, ssize_t H)
 {
-	int i = L, j, pivot = array[H];
+	int i, j, pivot = array[H];
 
-	for (j = L; j < H; j++)
+	for (i = j = L; j < H; j++)
 	{
 		if (array[j] < pivot)
 		{
-			swapInt(&array[i], &array[j]);
+			swapInt(array, size, &array[i], &array[j]);
 			i++;
-			print_array(array, size);
 		}
 	}
-	swapInt(&array[i], &array[H]);
-	print_array(array, size);
+	swapInt(array, size, &array[i], &array[H]);
 
 	return (i);
 }
