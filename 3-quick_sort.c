@@ -1,5 +1,11 @@
 #include "sort.h"
 
+
+void swapInt(int *x, int *y);
+size_t lomutoPart(int *array, size_t size, ssize_t L, ssize_t H);
+void qSort(int *array, size_t size, ssize_t L, ssize_t H);
+
+
 /**
  * swapInt - swaps 2 ints
  * @x: first int
