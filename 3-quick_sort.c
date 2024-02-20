@@ -31,13 +31,13 @@ size_t lomutoPart(int *array, size_t size, ssize_t L, ssize_t H)
 	{
 		if (array[j] < pivot)
 		{
-			swap(&array[i], &array[j]);
+			swapInt(&array[i], &array[j]);
 			i++;
 			print_array(array, size);
 		}
 	}
-	swap(&array[i], &array[H]);
-	print_array(aray, size);
+	swapInt(&array[i], &array[H]);
+	print_array(array, size);
 
 	return (i);
 }
