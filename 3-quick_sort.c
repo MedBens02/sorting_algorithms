@@ -16,7 +16,7 @@ void qSort(int *array, size_t size, ssize_t L, ssize_t H);
 void swapInt(int *array, size_t size, int *x, int *y)
 {
 	int tmp;
-	
+
 	if (*x != *y)
 	{	tmp = *x;
 		*x = *y;
